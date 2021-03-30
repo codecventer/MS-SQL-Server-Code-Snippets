@@ -1,0 +1,40 @@
+-- COMMIT and ROLLBACK commands:
+USE University
+GO
+
+BEGIN TRAN
+
+UPDATE campStaff
+SET Name = 'John'
+WHERE iden = '321'
+
+UPDATE campStaff
+SET Name = 'Johnny'
+WHERE city = 'Johannesburg'
+
+IF @@ROWCOUNT = 5
+    COMMIT TRAN
+ELSE
+    ROLLBACK TRAN
+
+
+-- SAVEPOINT
+USE University
+GO
+
+BEGIN TRANSACTION
+GO
+
+DELETE FROM campStaff WHERE Age = 35;
+GO
+
+SAVEPOINT TRANSACTION;
+GO
+
+
+-- SET TRANSACTION
+USE University
+GO
+
+SET TRAN READ ONLY NAME 'John';
+COMMIT

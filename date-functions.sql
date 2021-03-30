@@ -1,0 +1,9 @@
+
+DECLARE @y DATE
+ 
+SET @y = GETDATE()
+ 
+PRINT 'Normal: ' + CAST (@y AS VARCHAR)
+PRINT 'Day: ' + CAST (DAY(@y) AS VARCHAR)
+PRINT 'Month: ' + CAST (MONTH(@y) AS VARCHAR)
+PRINT 'Year: ' + CAST (YEAR(@y) AS VARCHAR)

@@ -1,0 +1,21 @@
+USE University
+GO
+
+CREATE PROCEDURE spGroup;1
+AS
+SELECT *
+FROM employee
+ORDER BY empName
+GO
+
+CREATE PROCEDURE spGroup;2
+AS
+SELECT *
+FROM campus
+GO
+
+CREATE PROCEDURE spGroup;3
+AS
+SELECT fName
+FROM student
+GO
